@@ -1,0 +1,13 @@
+{
+  "name": "employee-attendance-root",
+  "version": "1.0.0",
+  "description": "Smart Employee Attendance System using React, Flask, MTCNN, FaceNet and SVM",
+  "main": "start.js",
+  "scripts": {
+    "dev": "node start.js",
+    "install:all": "npm install --prefix frontend && pip install -r backend/requirements.txt"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

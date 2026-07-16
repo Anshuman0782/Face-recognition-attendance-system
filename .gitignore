@@ -1,0 +1,52 @@
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+bin/
+lib/
+include/
+
+# Node dependencies
+node_modules/
+frontend/node_modules/
+
+# Production builds
+dist/
+build/
+frontend/dist/
+frontend/build/
+
+# Local databases and user photo cache
+backend/database/users/
+backend/database/*.json
+backend/database/users.json
+backend/database/attendance.json
+
+# Python caching
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
