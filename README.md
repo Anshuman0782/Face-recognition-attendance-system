@@ -1,4 +1,16 @@
+---
+title: Employee Attendance
+emoji: 👤
+colorFrom: blue
+colorTo: indigo
+sdk: gradio
+sdk_version: 4.26.0
+app_file: app.py
+pinned: false
+---
+
 # FaceGuard - Smart Employee Attendance System
+
 
 An intelligent, real-time employee attendance system built using a **React** frontend and a **Python Flask** backend. The system employs state-of-the-art machine learning models running locally for face recognition, alignment, and classification.
 
