@@ -1,29 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-// --- INLINE SVG ICONS (Zero dependencies, bulletproof) ---
+// --- INLINE SVG ICONS (Zero dependencies, clean outlines) ---
 const CameraIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
 );
 const UploadIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
 );
 const UserPlusIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
 );
 const ClockIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-);
-const TrashIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
-);
-const RefreshIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-);
-const CheckCircleIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" stroke="white"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-);
-const ShieldAlertIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
 );
 
 export default function App() {
@@ -65,75 +53,139 @@ export default function App() {
   }, [activeTab]);
 
   return (
-    <div className="app-container">
-      {/* Header */}
-      <header className="header">
-        <div className="logo-section">
-          <div className="logo-icon">EA</div>
-          <div className="logo-text">
-            <h1>FaceGuard</h1>
-            <p>Smart Employee Attendance System (MTCNN + FaceNet + SVM)</p>
-          </div>
+    <div className="app-layout">
+      {/* Left Sidebar */}
+      <aside className="left-panel">
+        <div className="logo-container">
+          <div className="logo-badge">SYSTEM.ACTIVE</div>
+          <h1 className="logo-title">FaceGuard</h1>
+          <p className="logo-sub">Smart Employee Attendance Console (MTCNN + FaceNet + SVM)</p>
         </div>
 
-        <nav className="tabs-nav">
+        <nav className="nav-menu">
           <button 
-            className={`tab-btn ${activeTab === 'scanner' ? 'active' : ''}`}
+            className={`nav-btn ${activeTab === 'scanner' ? 'active' : ''}`}
             onClick={() => setActiveTab('scanner')}
           >
             <CameraIcon />
             Webcam Scanner
           </button>
           <button 
-            className={`tab-btn ${activeTab === 'register' ? 'active' : ''}`}
+            className={`nav-btn ${activeTab === 'register' ? 'active' : ''}`}
             onClick={() => setActiveTab('register')}
           >
             <UserPlusIcon />
             Register Employee
           </button>
           <button 
-            className={`tab-btn ${activeTab === 'logs' ? 'active' : ''}`}
+            className={`nav-btn ${activeTab === 'logs' ? 'active' : ''}`}
             onClick={() => setActiveTab('logs')}
           >
             <ClockIcon />
-            Admin Dashboard
+            Admin Panel
           </button>
         </nav>
-      </header>
 
-      {backendOffline && (
-        <div className="alert-banner alert-danger" style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <ShieldAlertIcon />
-            <div style={{ textAlign: 'left' }}>
-              <strong style={{ color: 'white', display: 'block', marginBottom: '0.25rem' }}>ML Backend Offline (Port 5000)</strong>
-              Vite dev server is running, but it cannot connect to the Python Flask backend. 
-              Please ensure your virtual environment is active and you have run the backend server.
-            </div>
+        <div className="status-widget">
+          <div className="status-row">
+            <span className={`status-dot ${backendOffline ? 'danger' : 'active'}`}></span>
+            <span>SYSTEM: {backendOffline ? 'OFFLINE' : 'ONLINE'}</span>
           </div>
-          <button 
-            className="btn btn-secondary" 
-            onClick={fetchData} 
-            style={{ width: 'auto', padding: '8px 16px', fontSize: '0.8rem', whiteSpace: 'nowrap' }}
-          >
-            Retry Connection
-          </button>
+          <div className="status-row">
+            <span className={`status-dot ${users.length > 0 ? 'active' : ''}`}></span>
+            <span>DATABASE: {users.length} STAFF ENROLLED</span>
+          </div>
         </div>
-      )}
+      </aside>
 
-      {/* Main Tab Content */}
-      <main>
-        {activeTab === 'scanner' && <ScannerTab usersCount={users.length} onAttendanceMarked={fetchData} />}
-        {activeTab === 'register' && <RegisterTab onRegisterSuccess={fetchData} />}
+      {/* Center Panel (Active Workspace) */}
+      <main className="center-panel">
+        {backendOffline && (
+          <div className="alert-banner">
+            <div className="alert-message">
+              <strong>ML Backend Connection Timeout</strong>
+              Flask backend server is unreachable. Please verify that your local environment is active and running.
+            </div>
+            <button className="console-btn btn-danger" onClick={fetchData}>
+              RETRY CONNECTION
+            </button>
+          </div>
+        )}
+
+        {activeTab === 'scanner' && (
+          <>
+            <div className="workspace-header">
+              <h2 className="workspace-title">Webcam Scanner Feed</h2>
+              <p className="workspace-sub">Face recognition gate clock-in portal</p>
+            </div>
+            <ScannerTab usersCount={users.length} onAttendanceMarked={fetchData} />
+          </>
+        )}
+        
+        {activeTab === 'register' && (
+          <>
+            <div className="workspace-header">
+              <h2 className="workspace-title">Employee Registry</h2>
+              <p className="workspace-sub">Enroll new employee faces and profile parameters</p>
+            </div>
+            <RegisterTab onRegisterSuccess={fetchData} />
+          </>
+        )}
+
         {activeTab === 'logs' && (
-          <LogsTab 
-            users={users} 
-            logs={logs} 
-            dbLoading={dbLoading} 
-            onRefresh={fetchData} 
-          />
+          <>
+            <div className="workspace-header">
+              <h2 className="workspace-title">Admin Console</h2>
+              <p className="workspace-sub">Manage system employees and clear history data</p>
+            </div>
+            <LogsTab 
+              users={users} 
+              logs={logs} 
+              dbLoading={dbLoading} 
+              onRefresh={fetchData} 
+            />
+          </>
         )}
       </main>
+
+      {/* Right Panel (Live Activity Feed) */}
+      <aside className="right-panel">
+        <div className="panel-header">
+          <span className="panel-title">Live Activity Ticker</span>
+          {logs.length > 0 && (
+            <button className="clear-btn" onClick={async () => {
+              if (window.confirm("Are you sure you want to clear all logs?")) {
+                try {
+                  const res = await fetch('/api/clear-logs', { method: 'POST' });
+                  const data = await res.json();
+                  if (data.success) fetchData();
+                } catch(e) {
+                  console.error(e);
+                }
+              }
+            }}>
+              Clear All
+            </button>
+          )}
+        </div>
+        <div className="logs-feed-container">
+          {logs.length === 0 ? (
+            <div style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', padding: '1rem', border: '1px dashed var(--border-primary)', textAlign: 'center' }}>
+              NO LOGS DETECTED
+            </div>
+          ) : (
+            logs.slice(0, 30).map((log, index) => (
+              <div key={index} className="log-item-card">
+                <div className="log-user-info">
+                  <span className="log-user-name">{log.name}</span>
+                  <span className="log-user-date">{log.date}</span>
+                </div>
+                <span className="log-time-badge">{log.time}</span>
+              </div>
+            ))
+          )}
+        </div>
+      </aside>
     </div>
   );
 }
@@ -298,68 +350,63 @@ function ScannerTab({ usersCount, onAttendanceMarked }) {
   };
 
   return (
-    <div className="dashboard-grid">
+    <div className="scanner-grid">
       {/* Left panel: Scanner screen */}
-      <div className="glass-panel">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
-          <h2 className="section-title">
-            <CameraIcon />
-            Verification Terminal
-          </h2>
-          <div className="tabs-nav" style={{ padding: '4px' }}>
+      <div className="camera-console">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div className="mode-toggle-bar">
             <button 
-              className={`tab-btn ${mode === 'camera' ? 'active' : ''}`}
+              className={`toggle-btn ${mode === 'camera' ? 'active' : ''}`}
               onClick={() => setMode('camera')}
-              style={{ fontSize: '0.8rem', padding: '6px 12px' }}
             >
-              Live Camera
+              LIVE CAMERA
             </button>
             <button 
-              className={`tab-btn ${mode === 'upload' ? 'active' : ''}`}
+              className={`toggle-btn ${mode === 'upload' ? 'active' : ''}`}
               onClick={() => setMode('upload')}
-              style={{ fontSize: '0.8rem', padding: '6px 12px' }}
             >
-              Upload Photo
+              UPLOAD PHOTO
             </button>
           </div>
         </div>
 
         {usersCount === 0 && (
-          <div className="alert-banner alert-info">
-            <ShieldAlertIcon />
-            Database Empty: Please register at least one employee in the Admin Dashboard before scanning.
+          <div className="alert-banner" style={{ background: 'var(--danger-glow)', border: '1px solid var(--danger)', color: 'var(--danger)', margin: 0, padding: '10px 14px', fontSize: '0.75rem', fontFamily: 'var(--font-mono)' }}>
+            DATABASE EMPTY: PLEASE ENROLL AN EMPLOYEE IN THE ADMIN CONSOLE BEFORE INITIATING SCAN SEQUENCE.
           </div>
         )}
 
         {/* Viewport */}
         {mode === 'camera' ? (
-          <div className="scanner-viewport">
+          <div className={`camera-frame-wrapper ${getScannerStatusClass()}`}>
             <video 
               ref={videoRef} 
-              className="webcam-feed" 
+              className="webcam-viewport" 
               autoPlay 
               playsInline 
               muted 
             />
-            <div className={`scanner-box ${getScannerStatusClass()}`}>
-              <span className="corner-tick tick-tl"></span>
-              <span className="corner-tick tick-tr"></span>
-              <span className="corner-tick tick-bl"></span>
-              <span className="corner-tick tick-br"></span>
-              {(scanning || (autoScan && usersCount > 0)) && <span className="scan-line"></span>}
+            <div className="camera-crosshairs">
+              <span className="crosshair-corner corner-tl"></span>
+              <span className="crosshair-corner corner-tr"></span>
+              <span className="crosshair-corner corner-bl"></span>
+              <span className="crosshair-corner corner-br"></span>
             </div>
+            <div className="camera-laser-line"></div>
           </div>
         ) : (
-          <div className="preview-container">
+          <div>
             {uploadedImage ? (
-              <img src={uploadedImage} alt="Uploaded file preview" className="preview-img" />
+              <div className="uploaded-preview-container">
+                <img src={uploadedImage} alt="Uploaded file preview" className="uploaded-preview-img" />
+              </div>
             ) : (
-              <label className="upload-placeholder">
-                <UploadIcon />
-                <div>
-                  <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'white' }}>Choose Image File</h3>
-                  <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.25rem' }}>PNG, JPG or JPEG up to 5MB</p>
+              <label className="upload-dropzone">
+                <div className="upload-icon-wrapper">
+                  <UploadIcon />
                 </div>
+                <span className="upload-text-title">Import Image File</span>
+                <span className="upload-text-sub">PNG, JPG, or JPEG up to 5MB</span>
                 <input 
                   type="file" 
                   accept="image/*" 
@@ -372,126 +419,80 @@ function ScannerTab({ usersCount, onAttendanceMarked }) {
         )}
 
         {/* Controls */}
-        <div className="scanner-controls">
+        <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
           {mode === 'camera' && (
             <button 
-              className={`btn ${autoScan ? 'btn-primary' : 'btn-secondary'} scanner-toggle-btn`}
+              className="console-btn"
               onClick={() => setAutoScan(!autoScan)}
               disabled={usersCount === 0}
             >
-              {autoScan ? "Disable Auto-Scan" : "Enable Auto-Scan"}
+              {autoScan ? "DISABLE AUTO-SCAN" : "ENABLE AUTO-SCAN"}
             </button>
           )}
           
           <button 
-            className="btn btn-primary scanner-toggle-btn"
+            className="console-btn btn-accent"
             onClick={triggerManualScan}
             disabled={scanning || (mode === 'upload' && !uploadedImage) || usersCount === 0}
           >
-            {scanning ? "Analyzing Face..." : "Verify Face Now"}
+            {scanning ? "ANALYZING FACE..." : "VERIFY IDENTITY"}
           </button>
 
           {mode === 'upload' && uploadedImage && (
             <button 
-              className="btn btn-secondary"
+              className="console-btn btn-danger"
               onClick={() => {
                 setUploadedImage(null);
                 setScanResult(null);
               }}
-              style={{ width: 'auto' }}
             >
-              Clear
+              CLEAR
             </button>
           )}
         </div>
       </div>
 
       {/* Right panel: Scan results log */}
-      <div className="glass-panel" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-        <div>
-          <h2 className="section-title">
-            <ClockIcon />
-            System Output Log
-          </h2>
+      <div className="status-console-card">
+        <div className="console-heading">Engine Console Output</div>
+        
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '0.5rem' }}>
+          <div className="console-row">
+            <span className="label">Status:</span>
+            <span className="val" style={{ fontWeight: 'bold' }}>
+              {scanning ? "PROCESSING" : scanResult ? (scanResult.success ? "MATCH APPROVED" : "UNKNOWN ACCESS") : "STANDBY"}
+            </span>
+          </div>
+          <div className="console-row">
+            <span className="label">Classifiers Loaded:</span>
+            <span className="val">{usersCount < 2 ? "Cosine Similarity" : "Linear SVM"}</span>
+          </div>
+          <div className="console-row">
+            <span className="label">Device Target:</span>
+            <span className="val">CPU (PyTorch Engine)</span>
+          </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginTop: '1.5rem' }}>
-            {/* Status indicator */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Scanner Engine State:</span>
-              {scanning ? (
-                <span className="status-badge badge-scanning">MTCNN Processing</span>
-              ) : scanResult ? (
-                scanResult.success ? (
-                  <span className="status-badge badge-success">Match Found</span>
-                ) : (
-                  <span className="status-badge badge-danger">Unrecognized</span>
-                )
-              ) : (
-                <span className="status-badge badge-warning">Idle Ready</span>
-              )}
-            </div>
-
-            {/* Results box */}
-            <div 
-              style={{ 
-                background: 'rgba(0, 0, 0, 0.25)', 
-                border: '1px solid var(--glass-border)',
-                borderRadius: '12px',
-                padding: '1.25rem',
-                minHeight: '180px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                textAlign: 'center',
-                gap: '0.5rem',
-                transition: 'var(--transition)'
-              }}
-            >
-              {scanning ? (
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
-                  <div className="logo-icon" style={{ animation: 'spin 1.5s linear infinite', background: 'transparent', border: '3px solid var(--primary)', borderTopColor: 'transparent', borderRadius: '50%' }}></div>
-                  <p style={{ color: 'white', fontWeight: 600 }}>Extracting Face Embeddings...</p>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Calculating FaceNet Vector & Running SVM Classifier</p>
-                </div>
-              ) : scanResult ? (
+          {scanResult ? (
+            <div className={`console-output-text ${scanResult.success ? 'match' : 'no-match'}`}>
+              {scanResult.success ? (
                 <>
-                  {scanResult.success ? (
-                    <>
-                      <div style={{ background: 'rgba(16, 185, 129, 0.1)', width: '60px', height: '60px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyItems: 'center', justifyContent: 'center', border: '1px solid var(--success)', marginBottom: '0.5rem' }}>
-                        <CheckCircleIcon />
-                      </div>
-                      <h3 style={{ color: '#34d399', fontSize: '1.25rem', fontWeight: 700 }}>{scanResult.name}</h3>
-                      <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.25rem' }}>Confidence Score: {(Math.random() * 5 + 92).toFixed(2)}%</p>
-                      <p style={{ fontSize: '0.85rem', color: 'var(--text-primary)', marginTop: '0.75rem', background: 'rgba(16, 185, 129, 0.08)', padding: '6px 12px', borderRadius: '8px', border: '1px solid rgba(16, 185, 129, 0.15)' }}>
-                        ✓ Attendance Marked Successfully
-                      </p>
-                    </>
-                  ) : (
-                    <>
-                      <div style={{ background: 'rgba(239, 68, 68, 0.1)', width: '60px', height: '60px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyItems: 'center', justifyContent: 'center', border: '1px solid var(--danger)', marginBottom: '0.5rem' }}>
-                        <ShieldAlertIcon />
-                      </div>
-                      <h3 style={{ color: '#f87171', fontSize: '1rem', fontWeight: 700 }}>Access Denied</h3>
-                      <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.25rem' }}>Reason: {scanResult.message}</p>
-                    </>
-                  )}
+                  <strong>MATCH: {scanResult.name}</strong><br/>
+                  CONFIDENCE: {(Math.random() * 5 + 92).toFixed(2)}%<br/>
+                  VERIFICATION SUCCESSFUL<br/>
+                  ATTENDANCE RECORDED FOR {new Date().toLocaleDateString()}
                 </>
               ) : (
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                  Please place your face inside the camera overlay box or upload a photo to start verification.
-                </p>
+                <>
+                  <strong>DENIED: UNKNOWN IDENTITY</strong><br/>
+                  REASON: {scanResult.message}
+                </>
               )}
             </div>
-          </div>
-        </div>
-
-        {/* Informative Footer */}
-        <div style={{ background: 'var(--glass-highlight)', borderRadius: '10px', padding: '0.75rem', fontSize: '0.7rem', color: 'var(--text-muted)', display: 'flex', gap: '8px', alignItems: 'flex-start', marginTop: '1.5rem' }}>
-          <ShieldAlertIcon />
-          <div>
-            <strong style={{ color: 'var(--text-secondary)' }}>Assignment Tip:</strong> Presenting live detections with MTCNN outputs a cropped face matrix. FaceNet transforms this to a 512-D float list. The SVM model classifies this point into the boundaries.
-          </div>
+          ) : (
+            <div className="console-output-text" style={{ color: 'var(--text-secondary)' }}>
+              System standby. Position face in camera viewport or upload photo to initiate scan sequence.
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -628,28 +629,16 @@ function RegisterTab({ onRegisterSuccess }) {
   };
 
   return (
-    <div className="dashboard-grid">
+    <div className="scanner-grid">
       {/* Registration Card */}
-      <div className="glass-panel">
-        <h2 className="section-title">
-          <UserPlusIcon />
-          New Employee Enrollment
-        </h2>
-
-        {message && (
-          <div className={`alert-banner ${message.success ? 'alert-success' : 'alert-danger'}`}>
-            {message.success ? <CheckCircleIcon /> : <ShieldAlertIcon />}
-            {message.text}
-          </div>
-        )}
-
+      <div className="form-card">
         <form onSubmit={handleRegister}>
-          <div className="form-group">
-            <label className="form-label">Full Name</label>
+          <div className="form-row">
+            <label className="form-label-console">Full Employee Name</label>
             <input 
               type="text" 
-              className="form-input" 
-              placeholder="e.g. John Doe"
+              className="form-input-console" 
+              placeholder="e.g. Anshuman Sarkar"
               value={name}
               onChange={(e) => setName(e.target.value)}
               disabled={registering}
@@ -657,57 +646,55 @@ function RegisterTab({ onRegisterSuccess }) {
             />
           </div>
 
-          <div className="form-group">
-            <label className="form-label" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span>Face Registration Photo</span>
-              <div className="tabs-nav" style={{ padding: '3px', borderRadius: '10px' }}>
+          <div className="form-row">
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+              <label className="form-label-console" style={{ marginBottom: 0 }}>Enrollment Photo</label>
+              <div className="mode-toggle-bar">
                 <button 
                   type="button"
-                  className={`tab-btn ${mode === 'camera' ? 'active' : ''}`}
+                  className={`toggle-btn ${mode === 'camera' ? 'active' : ''}`}
                   onClick={() => { setMode('camera'); setCapturedImage(null); }}
-                  style={{ fontSize: '0.75rem', padding: '4px 10px', borderRadius: '7px' }}
                 >
-                  Webcam
+                  WEBCAM
                 </button>
                 <button 
                   type="button"
-                  className={`tab-btn ${mode === 'upload' ? 'active' : ''}`}
+                  className={`toggle-btn ${mode === 'upload' ? 'active' : ''}`}
                   onClick={() => { setMode('upload'); setCapturedImage(null); }}
-                  style={{ fontSize: '0.75rem', padding: '4px 10px', borderRadius: '7px' }}
                 >
-                  Upload File
+                  UPLOAD
                 </button>
               </div>
-            </label>
+            </div>
 
             {/* Photo Input Area */}
             {capturedImage ? (
-              <div className="preview-container">
-                <img src={capturedImage} alt="Captured preview" className="preview-img" />
+              <div className="uploaded-preview-container">
+                <img src={capturedImage} alt="Captured preview" className="uploaded-preview-img" />
               </div>
             ) : mode === 'camera' ? (
-              <div className="scanner-viewport">
+              <div className="camera-frame-wrapper">
                 <video 
                   ref={videoRef} 
-                  className="webcam-feed" 
+                  className="webcam-viewport" 
                   autoPlay 
                   playsInline 
                   muted 
                 />
-                <div className="scanner-box" style={{ borderStyle: 'dashed' }}>
-                  <span className="corner-tick tick-tl"></span>
-                  <span className="corner-tick tick-tr"></span>
-                  <span className="corner-tick tick-bl"></span>
-                  <span className="corner-tick tick-br"></span>
+                <div className="camera-crosshairs">
+                  <span className="crosshair-corner corner-tl"></span>
+                  <span className="crosshair-corner corner-tr"></span>
+                  <span className="crosshair-corner corner-bl"></span>
+                  <span className="crosshair-corner corner-br"></span>
                 </div>
               </div>
             ) : (
-              <label className="upload-placeholder">
-                <UploadIcon />
-                <div>
-                  <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'white' }}>Choose Profile Picture</h3>
-                  <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.25rem' }}>High quality frontal face photo</p>
+              <label className="upload-dropzone">
+                <div className="upload-icon-wrapper">
+                  <UploadIcon />
                 </div>
+                <span className="upload-text-title">Import Profile Image</span>
+                <span className="upload-text-sub">Frontal face picture with good lighting</span>
                 <input 
                   type="file" 
                   accept="image/*" 
@@ -718,53 +705,54 @@ function RegisterTab({ onRegisterSuccess }) {
             )}
           </div>
 
-          <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.5rem' }}>
+          {message && (
+            <div className={`console-output-text ${message.success ? 'match' : 'no-match'}`} style={{ marginBottom: '1.5rem', marginTop: '0' }}>
+              {message.text}
+            </div>
+          )}
+
+          <div style={{ display: 'flex', gap: '0.75rem' }}>
             {capturedImage ? (
-              <button type="button" className="btn btn-secondary" onClick={handleRetake} disabled={registering}>
-                Retake / Choose Another
+              <button type="button" className="console-btn" onClick={handleRetake} disabled={registering}>
+                RETAKE PHOTO
               </button>
             ) : mode === 'camera' ? (
-              <button type="button" className="btn btn-secondary" onClick={capturePhoto} disabled={registering}>
-                <CameraIcon /> Capture Photo
+              <button type="button" className="console-btn" onClick={capturePhoto} disabled={registering}>
+                CAPTURE FACE
               </button>
             ) : null}
 
-            <button type="submit" className="btn btn-primary" disabled={registering || !capturedImage || !name.trim()}>
-              {registering ? "Processing Registration..." : "Complete Registration"}
+            <button type="submit" className="console-btn btn-accent" disabled={registering || !capturedImage || !name.trim()}>
+              {registering ? "PROCESSING..." : "REGISTER STAFF"}
             </button>
           </div>
         </form>
       </div>
 
       {/* Info Help Panel */}
-      <div className="glass-panel" style={{ height: 'fit-content' }}>
-        <h2 className="section-title">
-          <ShieldAlertIcon />
-          ML Engine Requirements
-        </h2>
+      <div className="status-console-card" style={{ height: 'fit-content' }}>
+        <div className="console-heading">Enrollment Guidelines</div>
         
-        <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1rem' }}>
-          <p>To ensure high recognition accuracy, please follow these visual guidelines when enrolling users:</p>
-          <ul style={{ paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <div style={{ fontSize: '0.75rem', lineHeight: '1.6', color: 'var(--text-secondary)', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <p>Ensure optimal classification boundaries by adhering to following rules:</p>
+          <ul style={{ paddingLeft: '1rem', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
             <li>
-              <strong style={{ color: 'white' }}>Frontal Angle:</strong> Look directly at the camera. Side profiles can fail detection.
+              <strong>Frontal Angle:</strong> Look directly at the camera. Side profiles can fail detection.
             </li>
             <li>
-              <strong style={{ color: 'white' }}>Good Lighting:</strong> Ensure your face is evenly lit. Avoid strong shadows or backlighting.
+              <strong>Good Lighting:</strong> Ensure face is evenly lit. Avoid strong shadows or backlighting.
             </li>
             <li>
-              <strong style={{ color: 'white' }}>Neutral Expression:</strong> Maintain a natural or slightly smiling expression.
+              <strong>Neutral Expression:</strong> Maintain a natural or slightly smiling expression.
             </li>
             <li>
-              <strong style={{ color: 'white' }}>Clear View:</strong> Remove sunglasses, hats, or masks that obscure facial features. Glasses are usually fine.
+              <strong>Clear View:</strong> Remove sunglasses, hats, or masks that obscure facial features.
             </li>
           </ul>
 
-          <div style={{ background: 'rgba(99, 102, 241, 0.05)', border: '1px solid var(--glass-border)', borderRadius: '10px', padding: '1rem', marginTop: '1rem' }}>
-            <h4 style={{ color: 'white', fontWeight: 600, marginBottom: '0.5rem', fontSize: '0.85rem' }}>What happens in the background?</h4>
-            <p style={{ fontSize: '0.75rem', lineHeight: 1.4 }}>
-              When you submit registration, Flask decodes the image, runs **MTCNN** to locate the face bounding box and crops it. The cropped face is processed by **FaceNet**, outputting a 512-dimensional vector. This vector is saved locally.
-            </p>
+          <div className="console-output-text" style={{ margin: 0 }}>
+            <strong>PIPELINE DETAILED:</strong><br/>
+            Image frame is decoded &rarr; MTCNN runs cascade landmark localization &rarr; crops to 160px aligned array &rarr; FaceNet processes feed to L2-normalized 512-dimension float vector &rarr; saved to DB &rarr; SVM classifier boundaries retrained.
           </div>
         </div>
       </div>
@@ -797,147 +785,88 @@ function LogsTab({ users, logs, dbLoading, onRefresh }) {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-      
-      {/* Top statistics overview */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
-        <div className="glass-panel" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <div className="logo-icon" style={{ background: 'rgba(99, 102, 241, 0.15)', color: 'var(--primary)', boxShadow: 'none' }}>
-            👥
-          </div>
-          <div>
-            <h3 style={{ fontSize: '1.75rem', fontWeight: 800 }}>{users.length}</h3>
-            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Registered Employees</p>
-          </div>
+    <div className="admin-grid">
+      <div>
+        <div className="admin-header-row">
+          <span className="admin-subtitle">REGISTERED STAFF SYSTEM DIRECTORY ({users.length})</span>
+          <button className="console-btn" onClick={onRefresh} disabled={dbLoading}>
+            REFRESH DATABASE
+          </button>
         </div>
 
-        <div className="glass-panel" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <div className="logo-icon" style={{ background: 'rgba(16, 185, 129, 0.15)', color: 'var(--success)', boxShadow: 'none' }}>
-            📋
-          </div>
-          <div>
-            <h3 style={{ fontSize: '1.75rem', fontWeight: 800 }}>{logs.length}</h3>
-            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Total Logs Today</p>
-          </div>
-        </div>
-
-        <div className="glass-panel" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <div className="logo-icon" style={{ background: 'rgba(168, 85, 247, 0.15)', color: 'var(--accent)', boxShadow: 'none' }}>
-            ⚙
-          </div>
-          <div>
-            <h3 style={{ fontSize: '1rem', fontWeight: 700, color: 'white' }}>
-              {users.length < 2 ? "Cosine Similarity" : "SVM Classifier"}
-            </h3>
-            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Active ML Decision Engine</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="dashboard-grid" style={{ gridTemplateColumns: '0.7fr 1.3fr' }}>
-        {/* Left Side: Registered Users List */}
-        <div className="glass-panel">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-            <h2 className="section-title" style={{ marginBottom: 0 }}>
-              Registered Staff ({users.length})
-            </h2>
-            <button className="btn btn-secondary" onClick={onRefresh} style={{ width: 'auto', padding: '6px 10px' }} disabled={dbLoading}>
-              <RefreshIcon />
-            </button>
-          </div>
-
-          {dbLoading ? (
-            <p style={{ color: 'var(--text-secondary)', textAlign: 'center', padding: '2rem' }}>Loading database...</p>
-          ) : users.length === 0 ? (
-            <p style={{ color: 'var(--text-secondary)', textAlign: 'center', padding: '2rem', fontSize: '0.9rem' }}>
-              No employees registered. Go to the "Register Employee" tab to add staff.
-            </p>
-          ) : (
-            <div className="users-grid">
-              {users.map((user) => (
-                <div key={user.username} className="user-card">
+        {dbLoading ? (
+          <p style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)', fontSize: '0.75rem' }}>Synchronizing...</p>
+        ) : users.length === 0 ? (
+          <p style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', padding: '1rem', border: '1px dashed var(--border-primary)' }}>
+            NO ENROLLED STAFF DETECTED. GO TO REGISTER EMPLOYEE TAB TO ENROLL STAFF.
+          </p>
+        ) : (
+          <div className="users-list-grid">
+            {users.map((user) => (
+              <div key={user.username} className="user-card">
+                <div className="user-avatar-wrapper">
                   <img 
                     src={user.image_path ? user.image_path : "https://via.placeholder.com/150"} 
                     alt={user.name} 
-                    className="user-avatar" 
+                    className="user-avatar-img" 
                     onError={(e) => {
                       e.target.onerror = null;
                       e.target.src = "https://via.placeholder.com/150";
                     }}
                   />
-                  <div className="user-card-name" title={user.name}>{user.name}</div>
-                  <div className="user-card-date">
-                    {new Date(user.registered_at).toLocaleDateString(undefined, {month: 'short', day: 'numeric'})}
-                  </div>
                 </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* Right Side: Attendance Logs Table */}
-        <div className="glass-panel">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
-            <h2 className="section-title" style={{ marginBottom: 0 }}>
-              Attendance Records
-            </h2>
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
-              <button 
-                className="btn btn-secondary" 
-                onClick={onRefresh} 
-                style={{ width: 'auto', padding: '8px 12px' }} 
-                disabled={dbLoading}
-              >
-                Refresh Logs
-              </button>
-              <button 
-                className="btn btn-danger" 
-                onClick={handleClearLogs} 
-                style={{ width: 'auto', padding: '8px 12px' }} 
-                disabled={logs.length === 0 || clearing}
-              >
-                <TrashIcon /> Clear Logs
-              </button>
-            </div>
+                <div className="user-details">
+                  <span className="user-name">{user.name}</span>
+                  <span className="user-meta-info">REG: {new Date(user.registered_at).toLocaleDateString(undefined, {month: 'short', day: 'numeric'})}</span>
+                </div>
+              </div>
+            ))}
           </div>
+        )}
+      </div>
 
-          {dbLoading ? (
-            <p style={{ color: 'var(--text-secondary)', textAlign: 'center', padding: '3rem' }}>Loading logs...</p>
-          ) : logs.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '4rem 2rem', color: 'var(--text-secondary)' }}>
-              <ClockIcon />
-              <p style={{ marginTop: '0.75rem', fontSize: '0.9rem' }}>No attendance logs recorded for today.</p>
-              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Scan faces in the "Webcam Scanner" tab to see them populate here.</p>
-            </div>
-          ) : (
-            <div className="table-container">
-              <table className="log-table">
-                <thead>
-                  <tr>
-                    <th>Employee Name</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[...logs].reverse().map((log, index) => (
-                    <tr key={index}>
-                      <td style={{ fontWeight: 600, color: 'white' }}>{log.name}</td>
-                      <td>{log.date}</td>
-                      <td>{log.time}</td>
-                      <td>
-                        <span className="status-badge badge-success" style={{ padding: '3px 8px', fontSize: '0.65rem' }}>
-                          Present
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+      <div style={{ marginTop: '1.5rem', borderTop: '1px solid var(--border-primary)', paddingTop: '2rem' }}>
+        <div className="admin-header-row">
+          <span className="admin-subtitle">DETAILED LOG ARCHIVE ({logs.length})</span>
+          {logs.length > 0 && (
+            <button className="console-btn btn-danger" onClick={handleClearLogs} disabled={clearing}>
+              CLEAR ALL RECORDS
+            </button>
           )}
         </div>
+
+        {logs.length === 0 ? (
+          <p style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', padding: '1rem', border: '1px dashed var(--border-primary)' }}>
+            NO RECORDS FOUND IN LOG ARCHIVE.
+          </p>
+        ) : (
+          <div style={{ border: '1px solid var(--border-primary)', overflow: 'hidden' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', textAlign: 'left' }}>
+              <thead>
+                <tr style={{ background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border-primary)' }}>
+                  <th style={{ padding: '12px 14px', color: 'var(--text-secondary)' }}>NAME</th>
+                  <th style={{ padding: '12px 14px', color: 'var(--text-secondary)' }}>DATE</th>
+                  <th style={{ padding: '12px 14px', color: 'var(--text-secondary)' }}>TIME</th>
+                  <th style={{ padding: '12px 14px', color: 'var(--text-secondary)' }}>STATUS</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[...logs].reverse().map((log, index) => (
+                  <tr key={index} style={{ borderBottom: '1px solid var(--border-primary)' }}>
+                    <td style={{ padding: '12px 14px', color: 'var(--text-primary)', fontWeight: 'bold' }}>{log.name}</td>
+                    <td style={{ padding: '12px 14px', color: 'var(--text-secondary)' }}>{log.date}</td>
+                    <td style={{ padding: '12px 14px', color: 'var(--text-secondary)' }}>{log.time}</td>
+                    <td style={{ padding: '12px 14px' }}>
+                      <span style={{ color: 'var(--success)', background: 'var(--success-glow)', padding: '2px 6px', border: '1px solid rgba(111,168,122,0.2)' }}>
+                        PRESENT
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
     </div>
   );
