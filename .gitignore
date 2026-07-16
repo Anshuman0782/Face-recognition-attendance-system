@@ -12,9 +12,7 @@ node_modules/
 frontend/node_modules/
 
 # Production builds
-dist/
 build/
-frontend/dist/
 frontend/build/
 
 # Local databases and user photo cache
